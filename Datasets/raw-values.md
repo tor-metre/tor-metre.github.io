@@ -1,9 +1,17 @@
 ---
 layout: default
-title: Understanding Raw Values
+title: Understanding the Raw Values
 parent: Datasets
 nav_order: 5
 ---
+
+Tor Metre has access to datasets in three different forms. Each measurement results in a WPT test result, which contains granular detail on every request and excellent visualisations. From that, we extract a JSON containing most of the important statistics and a small JPEG of the final result, which forms an intermediate result. Finally, we process those JSONs into an sqlite databse which we use for fast analysis. This document describes the differing granularity of each type. 
+
+## Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Processed (sqlite)
 
@@ -31,7 +39,15 @@ Columns are ordered alphabetically. Any visual metrics, e.g. visualComplete or S
 | step | In the current session, which number measurement this was. Use the label column to identify the session. | 
 | test_run_time_ms | The total time required to run the test in ms. This includes the entire session |
 | visualComplete | The time until the page finished loading was no longer visually changing in ms. | 
-| visualCompleteXX | XX indicates the % complete and is one of {85, 90, 95, 99}. |
+| visualCompleteXX | XX indicates the % complete and is one of {85, 90, 95, 99}. The % complete is calculated backwards from the finished state and measured in ms |
 
-## Raw (JSON)
+## Raw (JSON + JPEG)
 
+[Example JSON](/Datasets/example_results.json)
+
+Example Screenshot:
+![Example Screenshot](/Datasets/example_screenshot.jpeg "Example Finished Screenshot")
+
+## Full (WPT)
+
+The full measurement is equivalent to the standard WPT format, which can be inspected [here](https://www.webpagetest.org/). Note that every graphical output has a corresponding JSON behind the scenes. Furthermore, it is possible to run arbitrary javascript or extensions in order to record other statistics.
