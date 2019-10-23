@@ -1,5 +1,7 @@
 ---
 layout: home
+title : Home
+nav_order: 1
 ---
 
 This site serves as the primary documentation for the Tor Metre tool. The Tor Metre tool is a combination of the Web Page Test framework, with the Tor Browser and a custom Google Cloud orchestration framework. It allows for measurements of the Tor Browser (and tor network) in real world situations. 
