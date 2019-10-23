@@ -5,6 +5,10 @@ parent: Datasets
 nav_order: 3
 ---
 
+## Motivation / Summary
+
+This dataset was gathered in order to evaluate how Tor's performance varies with geographic location. It measures a range of websites, with/without Ublock, using both Firefox and Tor Browser. The geographic locations are chosen from Google Compute Engine's list of data centres and consequently represent a "best case" for a Tor user in that region. 
+
 ## Dataset Description
 
 | Parameter | Description          | 
@@ -22,6 +26,8 @@ nav_order: 3
 
 Some rows contain missing values, which are denoted "MISSING". These rows should be ignored as the reason for the missing data is not known. Consequently this dataset cannot be used to infer any statistics about failed requests. However, it can be used to infer statistics about successful requests. 
 
+Even though there were two runs of this experiment, the runs column is incorrectly set to zero for each measurement.
+
 ## Filtering on Parameters 
 
 | Parameter | Source Column          | 
@@ -32,6 +38,8 @@ Some rows contain missing values, which are denoted "MISSING". These rows should
 | Page Source | URL |
 | Add-ons | Label|
 | Scenario |  Label |
+
+
 
 ## Download
 
