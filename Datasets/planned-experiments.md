@@ -24,3 +24,8 @@ TODO
 # Guard Performance Test
 
 TODO
+
+# Onion Performance Test
+
+Test consistency and reliability of "mainstream" (Facebook, BBC) Onion websites. 
+Location based latency might also be interesting. 
